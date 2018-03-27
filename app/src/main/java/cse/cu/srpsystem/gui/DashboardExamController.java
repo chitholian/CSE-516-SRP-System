@@ -23,7 +23,7 @@ public class DashboardExamController extends DashboardCommon {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        exams = LocalDataHandler.getInstance(this).getExamsByController(AuthLogic.getInstance().getUser().getUserId());
+        retrieveExams();
         setContentView(R.layout.dashboard_exam_controller);
         findViewById(R.id.opt_distribute).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,14 +103,11 @@ public class DashboardExamController extends DashboardCommon {
         findViewById(R.id.opt_publish_result).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<Exam> unpublishedExams = new ArrayList<>();
-                for (Exam e : exams)
-                    if (e.published == 0) unpublishedExams.add(e);
-                if (unpublishedExams.size() == 0) {
+                if (exams.size() == 0) {
                     UITools.showMessage(context,
                             "No exam available to publish result.");
                 } else
-                    UITools.selectOne(context, unpublishedExams, new UITools.SelectionListener() {
+                    UITools.selectOne(context, exams, new UITools.SelectionListener() {
                         @Override
                         public void onSelect(final List<?> selectedItems) {
                             UITools.confirm(context, "Are you sure to publish result ?",
@@ -129,6 +126,7 @@ public class DashboardExamController extends DashboardCommon {
                                             }, new StatusListener() {
                                                 @Override
                                                 public void listen(Status status) {
+                                                    retrieveExams();
                                                     progressDialog.dismiss();
                                                     if (status.equals(Status.SUCCESSFUL)) {
                                                         ((Exam) selectedItems.get(0)).published = 1;
@@ -196,6 +194,10 @@ public class DashboardExamController extends DashboardCommon {
     @Override
     protected void refreshData() {
         super.refreshData();
+        retrieveExams();
+    }
+
+    private void retrieveExams(){
         exams = LocalDataHandler.getInstance(this).getExamsByController(AuthLogic.getInstance().getUser().getUserId());
     }
 }

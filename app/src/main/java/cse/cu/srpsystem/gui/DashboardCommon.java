@@ -117,13 +117,6 @@ public class DashboardCommon extends AppCompatActivity {
                         }
                     });
                 }
-                //todo:delete it
-                try{
-                    Thread.sleep(5000);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-
                 return StatusListener.Status.SUCCESSFUL;
             }
         }, new StatusListener() {

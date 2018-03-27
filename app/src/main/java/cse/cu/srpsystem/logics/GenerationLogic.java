@@ -48,6 +48,9 @@ public class GenerationLogic {
 
     public static StatusListener.Status calculateGPA(Context context, int exam_id) {
         List<Result> allResults = LocalDataHandler.getInstance(context).getMarksAsResult(exam_id);
-        return RemoteDataHandler.getInstance().sendResults(allResults);
+        StatusListener.Status status = RemoteDataHandler.getInstance().sendResults(allResults);
+        if (status.equals(StatusListener.Status.SUCCESSFUL))
+            LocalDataHandler.getInstance(context).storeResults(allResults);
+        return status;
     }
 }

@@ -1,5 +1,6 @@
 package cse.cu.srpsystem.gui;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,12 +19,21 @@ import cse.cu.srpsystem.logics.AuthLogic;
 public class UITools {
 
     public static void showMessage(Context context, String msg) {
+        showMessage(context, msg, false);
+    }
+
+    public static void showMessage(final Context context, String msg, final boolean finishActivity) {
         (new AlertDialog.Builder(context)).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
-        }).setMessage(msg).create().show();
+        }).setMessage(msg).setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (finishActivity) ((Activity) context).finish();
+            }
+        }).create().show();
     }
 
     public static void showToast(Context context, String msg) {

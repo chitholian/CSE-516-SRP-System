@@ -91,11 +91,6 @@ public class LoginDialog extends DialogFragment {
                 })).execute();
             }
         });
-        /*//todo:remove it;
-        emailField.setText("chitholian@gmail.com");
-        passwordField.setText("123456");
-        //roleSpinner.setSelection(2);
-        //loginButton.performClick();*/
         return new AlertDialog.Builder(context).setView(layout).setTitle("SRPS Login").create();
     }
 

@@ -186,7 +186,7 @@ public class LocalDataHandler {
             case RESULTS:
                 for (Object res : list) {
                     Result result = (Result) res;
-                    values = new ContentValues(3);
+                    values = new ContentValues(5);
                     values.put("exam_id", result.exam_id);
                     values.put("student_id", result.student_id);
                     values.put("course_code", result.course_code);
@@ -364,7 +364,7 @@ public class LocalDataHandler {
 
     public List<Exam> getExamsByController(int teacher_id) {
         ArrayList<Exam> exams = new ArrayList<>();
-        Cursor cursor = rdb.rawQuery("SELECT id, title, published FROM exams WHERE controller_id = ?", new String[]{teacher_id + ""});
+        Cursor cursor = rdb.rawQuery("SELECT id, title, published FROM exams WHERE controller_id = ? AND published = 0", new String[]{teacher_id + ""});
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             Exam exam = new Exam();
             exam.id = cursor.getInt(0);
@@ -470,6 +470,7 @@ public class LocalDataHandler {
             resultList.add(result);
         }
         cursor.close();
+
         return resultList;
     }
 
@@ -479,6 +480,25 @@ public class LocalDataHandler {
             if (e.published == 1)
                 publishedExams.add(e);
         return publishedExams;
+    }
+
+    public void storeResults(List<Result> results) {
+        ContentValues values;
+        for (Result result : results){
+            try{
+                values = new ContentValues(5);
+                values.put("exam_id", result.exam_id);
+                values.put("student_id", result.student_id);
+                values.put("course_code", result.course_code);
+                values.put("gpa", result.gpa);
+                values.put("comment", result.comment);
+                if (wdb.insert("results", null, values) == -1)
+                    wdb.update("results", values, "exam_id = ? AND student_id = ? AND course_code = ?",
+                            new String[]{result.exam_id + "", result.student_id + "", result.course_code});
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
 

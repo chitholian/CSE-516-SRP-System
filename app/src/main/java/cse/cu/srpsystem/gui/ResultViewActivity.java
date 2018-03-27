@@ -31,8 +31,7 @@ public class ResultViewActivity extends AppCompatActivity {
         student_id = getIntent().getIntExtra("student_id", 0);
         results = GenerationLogic.getResults(this, student_id, exam_id);
         if (results.size() == 0) {
-            UITools.showMessage(getParent(), "Oops! No result for the given ID found.");
-            finish();
+            UITools.showMessage(ResultViewActivity.this, "Oops! No result for the given ID found.", true);
             return;
         }
         ArrayList<String[]> gpaArray = new ArrayList<>();
