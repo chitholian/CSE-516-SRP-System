@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp">
+
+        <TextView
+            android:id="@+id/exam_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="Examination: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <Spinner
+            android:id="@+id/exam_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/exam_label"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+
+        <TextView
+            android:id="@+id/course_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="Course: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/exam_label" />
+
+        <Spinner
+            android:id="@+id/course_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/course_label"
+            app:layout_constraintTop_toBottomOf="@id/exam_label" />
+
+        <AutoCompleteTextView
+            android:id="@+id/student_id_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Student ID"
+            android:inputType="number"
+            android:maxLength="8"
+            app:layout_constraintEnd_toStartOf="@id/marks_field"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/course_list" />
+
+        <EditText
+            android:id="@+id/marks_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Marks"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/student_id_field"
+            app:layout_constraintTop_toBottomOf="@id/course_list" />
+
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_normal"
+            android:text="Done"
+            android:textColor="#fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/student_id_field" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_primary"
+            android:text="Add"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/marks_field" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/add_button"
+            app:layout_constraintStart_toEndOf="@id/done_button"
+            app:layout_constraintTop_toBottomOf="@id/student_id_field" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

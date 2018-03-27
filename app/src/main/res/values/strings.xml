@@ -1,0 +1,22 @@
+<!--
+        SRP System, a Semester Result Processing System.
+        Copyright (C) 2018  University of Chittagong
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="app_name">SRP System</string>
+    <string name="full_name">Semester Result Processing System</string>
+    <string name="welcome_to_exam_controller_dashboard">Welcome to Exam Controller Dashboard</string>
+</resources>

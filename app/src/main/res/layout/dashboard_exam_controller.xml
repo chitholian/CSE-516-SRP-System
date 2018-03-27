@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.DashboardExamController">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <Button
+            android:id="@+id/opt_distribute"
+            style="@style/FlatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Distribute Answer-Scripts"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/opt_calc_gpa"
+            style="@style/FlatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Calculate GPA"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/opt_distribute" />
+
+        <Button
+            android:id="@+id/opt_publish_result"
+            style="@style/FlatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Publish Result"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/opt_calc_gpa" />
+
+        <Button
+            android:id="@+id/opt_gen_transcript"
+            style="@style/FlatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Generate Transcript"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/opt_publish_result" />
+
+        <Button
+            android:id="@+id/opt_view_result"
+            style="@style/FlatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="View Result"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/opt_gen_transcript" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

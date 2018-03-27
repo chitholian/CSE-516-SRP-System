@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cse.cu.srpsystem.gui.DistributionDialog">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10sp">
+
+        <LinearLayout
+            android:id="@+id/layout_course_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course: " />
+
+            <Spinner
+                android:id="@+id/spinner_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Part: " />
+
+            <Spinner
+                android:id="@+id/spinner_parts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_examiner_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="Examiner :"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/layout_course_part" />
+
+        <Spinner
+            android:id="@+id/spinner_examiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_examiner_list" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/spinner_examiner" />
+
+        <AutoCompleteTextView
+            android:id="@+id/student_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:completionThreshold="6"
+            android:hint="Student ID"
+            android:inputType="number"
+            android:maxLength="8"
+            app:layout_constraintEnd_toStartOf="@id/view_script_code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator" />
+
+        <TextView
+            android:id="@+id/view_script_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10sp"
+            android:text="Code : None"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator" />
+
+
+        <Button
+            android:id="@+id/button_assign_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_primary"
+            android:padding="5sp"
+            android:text="Assign Code"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/student_id" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/button_generate_code"
+            app:layout_constraintRight_toLeftOf="@id/button_assign_code"
+            app:layout_constraintTop_toBottomOf="@id/student_id" />
+
+        <Button
+            android:id="@+id/button_generate_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_normal"
+            android:padding="5sp"
+            android:text="Generate"
+            android:textColor="#fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/student_id" />
+
+        <Button
+            android:id="@+id/button_assign_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/button_primary"
+            android:padding="5sp"
+            android:text="Done"
+            android:textColor="#fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_generate_code" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

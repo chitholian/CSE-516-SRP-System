@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <Button
+            style="@style/FlatButton"
+            android:id="@+id/btn_submit_script_marks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Submit Script Marks"
+            android:textAllCaps="false" />
+
+        <Button
+            style="@style/FlatButton"
+            android:id="@+id/btn_submit_class_marks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="Submit Lab/Class Marks"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit_script_marks" />
+
+
+       <!-- <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="5sp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit_class_marks" />
+
+        <Button
+            android:id="@+id/opt_update_course_teachers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update List of Course Teachers"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/separator" />
+
+        <Button
+            android:id="@+id/opt_update_answer_scripts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update List of Answer Scripts"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/opt_update_course_teachers" />-->
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
