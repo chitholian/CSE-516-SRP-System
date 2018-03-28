@@ -26,8 +26,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:design:27.1.0'
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.squareup.retrofit2:retrofit:2.4.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.4.0'
-    compile 'de.codecrafters.tableview:tableview:2.8.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'de.codecrafters.tableview:tableview:2.8.0'
 }

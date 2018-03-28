@@ -29,30 +29,5 @@
             android:textAllCaps="false"
             app:layout_constraintTop_toBottomOf="@id/btn_submit_script_marks" />
 
-
-       <!-- <View
-            android:id="@+id/separator"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="5sp"
-            android:background="@color/colorPrimary"
-            app:layout_constraintTop_toBottomOf="@id/btn_submit_class_marks" />
-
-        <Button
-            android:id="@+id/opt_update_course_teachers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update List of Course Teachers"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@id/separator" />
-
-        <Button
-            android:id="@+id/opt_update_answer_scripts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update List of Answer Scripts"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@id/opt_update_course_teachers" />-->
-
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

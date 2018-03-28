@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-    return bcrypt('123456');
     return view('welcome');
 });
 

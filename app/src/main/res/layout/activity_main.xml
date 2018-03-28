@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cse.cu.srpsystem.gui.MainActivity">
+    tools:context="cse.cu.srpsystem.presentationlayer.MainActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

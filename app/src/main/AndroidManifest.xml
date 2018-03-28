@@ -28,25 +28,25 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gui.MainActivity">
+        <activity android:name=".presentationlayer.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".gui.DashboardCommon"/> -->
+        <!-- <activity android:name=".gui.LoginDashboardPL"/> -->
         <activity
-            android:name=".gui.DashboardExamController"
+            android:name=".presentationlayer.LoginDashboardExamController"
             android:label="Dashboard - E.C." />
         <activity
-            android:name=".gui.DashboardTeacher"
+            android:name=".presentationlayer.LoginDashboardTeacher"
             android:label="Dashboard - Teacher" />
         <activity
-            android:name=".gui.DashboardStudent"
+            android:name=".presentationlayer.LoginDashboardStudent"
             android:label="Dashboard - Student" />
         <activity
-            android:name=".gui.ResultViewActivity"
+            android:name=".presentationlayer.ViewResultPL"
             android:label="Result" />
     </application>
 

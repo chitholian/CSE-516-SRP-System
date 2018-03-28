@@ -2,10 +2,9 @@ package cse.cu.srpsystem.entities;
 
 import java.io.IOException;
 
-import cse.cu.srpsystem.data.RemoteDataHandler;
-import cse.cu.srpsystem.logics.AuthLogic;
-import cse.cu.srpsystem.logics.Exceptions;
-import cse.cu.srpsystem.logics.StatusListener;
+import cse.cu.srpsystem.applicationlayer.LoginBL;
+import cse.cu.srpsystem.applicationlayer.Exceptions;
+import cse.cu.srpsystem.applicationlayer.StatusListener;
 
 public class User {
     public int id;
@@ -31,7 +30,7 @@ public class User {
 
     public StatusListener.Status login(String email, String role, String password) {
         try {
-            User user = AuthLogic.getInstance().authenticate(email, role, password);
+            User user = LoginBL.getInstance().authenticate(email, role, password);
             if (user != null && user.id != 0) {
                 user.role = role;
                 user.user_id = user.id;
@@ -50,7 +49,7 @@ public class User {
     }
 
     public void logout() {
-        AuthLogic.getInstance().logoutUser(this);
+        LoginBL.getInstance().logoutUser(this);
         role = null;
         user_id = id = 0;
     }
